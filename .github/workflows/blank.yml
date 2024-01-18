@@ -30,8 +30,11 @@ jobs:
       - name: Run a multi-line script
         run: |
           echo "dd" > t.txt
-          git push
-
+          git add -A
 
       - uses: actions/setup-python@v3
       - uses: pre-commit/action@v3.0.0
+
+      - name: push
+        run: |
+          git push
